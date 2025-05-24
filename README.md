@@ -1,21 +1,25 @@
-# Ecommerce Store App
+# 🛍️ Ecommerce Store App
 
-### Currently in Development Phase ... (stay updated)
+**Currently in Development Phase – Stay Tuned!**
 
-┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-|                                                                                                  |
-|                                   WELCOME TO ECOMMERCE STORE                                     |  
-|                                                                                                  |
-|    Greetings,                                                                                    |
-|                                                                                                  |
-|    I am currently working on this project. Here I am going to build an Ecommerce store           |
-|    mobile app houses a robust e-commerce solution developed using the Flutter framework.         |
-|                                                                                                  |
-|    I am dedicated to continuous learning and improvement and I welcome feedback                  |
-|    to make this solution even more industry-leading.                                             |
-|    Dive in, explore, and let's innovate together.                                                |
-|                                                                                                  |
-|    Regards,                                                                                      |
-|    Abdullah Khan Kakar                                                                           |
-|                                                                                                  |
-└──────────────────────────────────────────────────────────────────────────────────────────────────┘
+Welcome to the **Ecommerce Store**, a modern mobile application built with **Flutter** to provide a seamless and responsive shopping experience.
+
+## 🚧 Project Status
+
+This app is currently under active development. The goal is to deliver a robust, scalable, and intuitive e-commerce solution tailored for modern users.
+
+## 🎯 Key Highlights (Planned)
+
+- 🚀 Clean and modern UI (Light & Dark themes)
+- 🛒 Product listing and detailed views
+- 🔐 Secure user authentication
+- 🛍️ Shopping cart and checkout flow
+- ☁️ Firebase (Authentication, cloud firestore, storage)
+
+## 🤝 Feedback Welcome
+
+I am committed to continuous improvement and open to feedback that enhances the user experience and code quality.
+
+---
+
+**Crafted with dedication by [Abdullah Khan Kakar]**
