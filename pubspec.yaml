@@ -10,8 +10,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # Utility Packages
+  intl: ^0.20.2
+  logger: ^2.5.0
+  connectivity_plus: ^6.1.4
+  smooth_page_indicator: ^1.2.1
+  flutter_native_splash: ^2.4.4
+  lottie: ^3.3.1
+
+  # Icons
   cupertino_icons: ^1.0.8
   iconsax: ^0.0.8
+
+  # State Management + Local Storage
+  get: ^4.7.2
+  get_storage: ^2.1.1
+
+  # Project Specific
+  carousel_slider: ^5.0.0
+  flutter_rating_bar: ^4.0.1
+  capped_progress_indicator: ^0.0.2
 
 
 dev_dependencies:
@@ -24,6 +43,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/
+    - assets/logos/
+    - assets/images/animations/
+    - assets/images/banners/
+    - assets/images/content/
+    - assets/images/on_boarding_images/
+    - assets/images/products/
+    - assets/images/reviews/
+    - assets/icons/brands/
+    - assets/icons/categories/
+    - assets/icons/payment_methods/
 
   fonts:
     - family: Poppins
