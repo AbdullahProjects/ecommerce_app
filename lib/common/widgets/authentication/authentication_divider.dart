@@ -2,8 +2,8 @@ import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
-class LoginDivider extends StatelessWidget {
-  const LoginDivider({
+class AuthenticationDivider extends StatelessWidget {
+  const AuthenticationDivider({
     super.key,
     required this.text,
   });

@@ -3,8 +3,8 @@ import 'package:ecommerce_app/utils/constants/app_images.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
 
-class LoginSocialButtons extends StatelessWidget {
-  const LoginSocialButtons({
+class AuthenticationSocialButtons extends StatelessWidget {
+  const AuthenticationSocialButtons({
     super.key,
   });
 
