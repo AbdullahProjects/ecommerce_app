@@ -1,4 +1,11 @@
 import 'package:ecommerce_app/common/custom_shapes/containers/custom_header_container.dart';
+import 'package:ecommerce_app/common/custom_shapes/containers/search_container.dart';
+import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:ecommerce_app/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:ecommerce_app/utils/constants/app_colors.dart';
+import 'package:ecommerce_app/utils/constants/app_sizes.dart';
+import 'package:ecommerce_app/utils/constants/app_texts.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +19,37 @@ class HomeScreen extends StatelessWidget {
           children: [
             CustomHeader(
               child: Column(
-                children: [],
+                children: [
+                  /// Appbar
+                  HomeAppBar(),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+
+                  /// Search box
+                  SearchContainer(
+                    text: AppTexts.searchInStore,
+                    onTap: () {},
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+
+                  /// Categories
+                  Padding(
+                    padding: const EdgeInsets.only(left: AppSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        /// Heading
+                        SectionHeading(
+                          title: "Popular Categories",
+                          textColor: AppColors.white,
+                          showActionButton: false,
+                        ),
+                        const SizedBox(height: AppSizes.spaceBtwItems),
+
+                        /// Categories
+                        HomeCategories(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
