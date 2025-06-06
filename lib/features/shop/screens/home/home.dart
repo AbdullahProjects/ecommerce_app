@@ -1,9 +1,7 @@
-import 'package:ecommerce_app/common/custom_shapes/containers/circular_container.dart';
 import 'package:ecommerce_app/common/custom_shapes/containers/custom_header_container.dart';
 import 'package:ecommerce_app/common/custom_shapes/containers/search_container.dart';
-import 'package:ecommerce_app/common/widgets/images/rounded_image.dart';
+import 'package:ecommerce_app/common/widgets/products/product_cards/vertical_product_card.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_app/features/shop/controllers/home_controller.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_slider.dart';
@@ -11,9 +9,7 @@ import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_images.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:ecommerce_app/utils/constants/app_texts.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -64,13 +60,22 @@ class HomeScreen extends StatelessWidget {
             /// Body
             Padding(
               padding: const EdgeInsets.all(AppSizes.defaultSpace),
-              child: HomeSlider(
-                banners: [
-                  AppImages.banner1,
-                  AppImages.banner2,
-                  AppImages.banner3,
-                  AppImages.banner4,
-                  AppImages.banner5,
+              child: Column(
+                children: [
+                  /// Promo slider
+                  HomeSlider(
+                    banners: [
+                      AppImages.banner1,
+                      AppImages.banner2,
+                      AppImages.banner3,
+                      AppImages.banner4,
+                      AppImages.banner5,
+                    ],
+                  ),
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+
+                  /// Product cart
+                  VerticalProductCard(),
                 ],
               ),
             ),

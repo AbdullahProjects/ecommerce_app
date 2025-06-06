@@ -25,10 +25,12 @@ class HomeSlider extends StatelessWidget {
           items:
               banners.map((banner) => RoundedImage(imageUrl: banner)).toList(),
           options: CarouselOptions(
-              viewportFraction: 1,
-              onPageChanged: (int value, _) {
-                controller.updateCarouselCurrentIndex(index: value);
-              }),
+            viewportFraction: 1.1,
+            reverse: false,
+            onPageChanged: (int value, _) {
+              controller.updateCarouselCurrentIndex(index: value);
+            },
+          ),
         ),
         const SizedBox(height: AppSizes.spaceBtwItems),
         Row(
