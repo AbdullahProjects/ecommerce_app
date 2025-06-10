@@ -75,7 +75,20 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBtwSections),
 
                   /// Product cart
-                  VerticalProductCard(),
+                  GridView.builder(
+                      padding: EdgeInsets.zero,
+                      itemCount: 4,
+                      shrinkWrap: true,
+                      primary: false,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: AppSizes.gridViewSpacing,
+                        crossAxisSpacing: AppSizes.gridViewSpacing,
+                        mainAxisExtent: 288,
+                      ),
+                      itemBuilder: (context, index) {
+                        return VerticalProductCard();
+                      }),
                 ],
               ),
             ),
