@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                         crossAxisCount: 2,
                         mainAxisSpacing: AppSizes.gridViewSpacing,
                         crossAxisSpacing: AppSizes.gridViewSpacing,
-                        mainAxisExtent: 288,
+                        mainAxisExtent: 290,
                       ),
                       itemBuilder: (context, index) {
                         return VerticalProductCard();
