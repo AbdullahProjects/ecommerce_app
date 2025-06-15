@@ -31,11 +31,12 @@ class CategoryTab extends StatelessWidget {
           GridView.builder(
               shrinkWrap: true,
               primary: false,
+              itemCount: 6,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: AppSizes.gridViewSpacing,
                   mainAxisSpacing: AppSizes.gridViewSpacing,
-                  mainAxisExtent: 200),
+                  mainAxisExtent: 290),
               itemBuilder: (_, index) {
                 return VerticalProductCard();
               }),

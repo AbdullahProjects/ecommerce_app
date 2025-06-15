@@ -3,7 +3,6 @@ import 'package:ecommerce_app/common/widgets/authentication/authentication_socia
 import 'package:ecommerce_app/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:ecommerce_app/utils/constants/app_texts.dart';
-import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

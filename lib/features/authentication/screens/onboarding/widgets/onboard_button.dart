@@ -3,7 +3,6 @@ import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class OnBoardingButton extends StatelessWidget {
   const OnBoardingButton({
