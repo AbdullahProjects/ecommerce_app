@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/features/shop/screens/home/home_screen.dart';
 import 'package:ecommerce_app/features/shop/screens/store/store_screen.dart';
+import 'package:ecommerce_app/features/shop/screens/wishlist/wishlist_screen.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,7 @@ class NavigationMenuController extends GetxController {
   final List<Widget> screens = [
     HomeScreen(),
     StoreScreen(),
-    Container(color: Colors.amberAccent),
+    WishlistScreen(),
     Container(color: Colors.purpleAccent),
   ];
 }
