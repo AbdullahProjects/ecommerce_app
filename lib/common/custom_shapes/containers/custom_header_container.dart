@@ -16,28 +16,24 @@ class CustomHeader extends StatelessWidget {
     return CurvedEdgesWidget(
       child: Container(
         color: AppColors.primary,
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Positioned(
-                top: -150,
-                right: -250,
-                child: CircularContainer(
-                  backgroundColor: AppColors.white.withValues(alpha: 0.1),
-                ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: -150,
+              right: -250,
+              child: CircularContainer(
+                backgroundColor: AppColors.white.withValues(alpha: 0.1),
               ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: CircularContainer(
-                  backgroundColor: AppColors.white.withValues(alpha: 0.1),
-                ),
+            ),
+            Positioned(
+              top: 100,
+              right: -300,
+              child: CircularContainer(
+                backgroundColor: AppColors.white.withValues(alpha: 0.1),
               ),
-              child,
-            ],
-          ),
+            ),
+            child,
+          ],
         ),
       ),
     );
