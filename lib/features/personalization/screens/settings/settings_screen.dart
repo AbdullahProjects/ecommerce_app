@@ -3,9 +3,11 @@ import 'package:ecommerce_app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce_app/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerce_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/personalization/screens/profile/profile_screen.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -34,7 +36,8 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   /// User Profile Card
-                  UserProfileTile(),
+                  UserProfileTile(
+                      onEditPressed: () => Get.to(() => ProfileScreen())),
                   const SizedBox(height: AppSizes.spaceBtwSections),
                 ],
               ),
