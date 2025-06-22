@@ -2,12 +2,14 @@ import 'package:ecommerce_app/common/custom_shapes/curved_edges/curved_edges_wid
 import 'package:ecommerce_app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce_app/common/widgets/icons/circular_icon.dart';
 import 'package:ecommerce_app/common/widgets/images/rounded_image.dart';
+import 'package:ecommerce_app/common/widgets/products/ream_more_text/read_more_text_widget.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/bottom_add_to_cart.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:ecommerce_app/features/shop/screens/product_reviews/product_reviews_screen.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_images.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
@@ -63,16 +65,10 @@ class ProductDetailsScreen extends StatelessWidget {
                   /// - Description
                   SectionHeading(title: "Description", showActionButton: false),
                   const SizedBox(height: AppSizes.spaceBtwItems),
-                  ReadMoreText(
-                    "Nike shoes are known for their innovative technologies and diverse range of styles, catering to various sports and casual wear. They are designed by athletes for athletes, with a focus on performance and comfort.  Nike shoes are known for their blend of performance, style, and innovation. They are designed to cater to a wide range of needs and preferences, from athletes seeking optimal performance to casual wear enthusiasts looking for trendy and comfortable footwear.",
+                  ReadMoreTextWidget(
+                    text:
+                        "Nike shoes are known for their innovative technologies and diverse range of styles, catering to various sports and casual wear. They are designed by athletes for athletes, with a focus on performance and comfort.  Nike shoes are known for their blend of performance, style, and innovation. They are designed to cater to a wide range of needs and preferences, from athletes seeking optimal performance to casual wear enthusiasts looking for trendy and comfortable footwear.",
                     trimLines: 4,
-                    trimMode: TrimMode.Line,
-                    trimCollapsedText: " Show more",
-                    trimExpandedText: " Less",
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
 
@@ -84,7 +80,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     children: [
                       SectionHeading(
                           title: "Reviews (120)",
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => ProductReviewsScreen()),
                           showActionButton: false),
                       Icon(
                         Iconsax.arrow_right_3,

@@ -27,7 +27,7 @@ class ProductDetailImageSlider extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(AppSizes.productImageRadius * 2),
                 child: Center(
-                    child: Image(image: AssetImage(AppImages.productImage5))),
+                    child: Image(image: AssetImage(AppImages.productImage23))),
               ),
             ),
 
