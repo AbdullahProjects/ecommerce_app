@@ -21,7 +21,7 @@ class ProductPriceText extends StatelessWidget {
       style: isLargeText
           ? Theme.of(context).textTheme.headlineMedium!.apply(
               decoration: lineThrough ? TextDecoration.lineThrough : null)
-          : Theme.of(context).textTheme.titleSmall!.apply(
+          : Theme.of(context).textTheme.titleMedium!.apply(
               decoration: lineThrough ? TextDecoration.lineThrough : null),
     );
   }
