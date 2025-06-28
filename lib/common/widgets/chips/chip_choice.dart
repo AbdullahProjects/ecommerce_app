@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/common/custom_shapes/containers/circular_container.dart';
-import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppChipChoiceColor extends StatelessWidget {

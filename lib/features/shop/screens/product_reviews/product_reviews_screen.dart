@@ -4,15 +4,11 @@ import 'package:ecommerce_app/common/widgets/images/rounded_image.dart';
 import 'package:ecommerce_app/common/widgets/products/ratings/product_rating_indicator.dart';
 import 'package:ecommerce_app/common/widgets/products/ream_more_text/read_more_text_widget.dart';
 import 'package:ecommerce_app/features/shop/screens/product_reviews/widgets/overall_rating_indicator.dart';
-import 'package:ecommerce_app/features/shop/screens/product_reviews/widgets/review_rating_bar.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_images.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:readmore/readmore.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});

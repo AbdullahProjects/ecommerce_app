@@ -3,6 +3,7 @@ import 'package:ecommerce_app/common/widgets/appbar/custom_appbar.dart';
 import 'package:ecommerce_app/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerce_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/personalization/screens/address/address.dart';
 import 'package:ecommerce_app/features/personalization/screens/profile/profile_screen.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
@@ -56,7 +57,9 @@ class SettingsScreen extends StatelessWidget {
                       title: "My Addresses",
                       subTitle: "Set shopping delivery address",
                       icon: Iconsax.safe_home,
-                      onTap: () {}),
+                      onTap: () {
+                        Get.to(() => const AddressScreen());
+                      }),
                   SettingsMenuTile(
                       title: "My Cart",
                       subTitle: "Add, remove products and move to checkout",
