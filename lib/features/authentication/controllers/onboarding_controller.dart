@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/data/services/get_storage/get_storage.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,8 @@ class OnboardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex.value == 2) {
+      // Local Storage
+      GetStorageServices.setOnboardingStatus(false, writeIfNull: false);
       // move towards authentication screens
       Get.offAll(() => LoginScreen());
     } else {
@@ -26,6 +29,8 @@ class OnboardingController extends GetxController {
   }
 
   void skipPage() {
+    // Local Storage
+    GetStorageServices.setOnboardingStatus(false, writeIfNull: false);
     Get.offAll(() => LoginScreen());
   }
 }
