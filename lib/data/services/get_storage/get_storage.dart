@@ -5,6 +5,8 @@ class GetStorageServices {
 
   /// Keys
   static String isFirstTime = "IsFirstTime";
+  static String rememberMeEmail = "RememberMeEmail";
+  static String rememberMePassword = "RememberMePassword";
 
   /// Get Storage
   static initialize() async {
@@ -22,5 +24,19 @@ class GetStorageServices {
     } else {
       deviceStorage.write(isFirstTime, value);
     }
+  }
+
+  /// Remember Me Email and Password
+  static setEmailAndPassword(String email, String password) {
+    deviceStorage.write(rememberMeEmail, email);
+    deviceStorage.write(rememberMePassword, password);
+  }
+
+  static String getRememberedEmail() {
+    return deviceStorage.read(rememberMeEmail);
+  }
+
+  static String getRememberedPassword() {
+    return deviceStorage.read(rememberMePassword);
   }
 }

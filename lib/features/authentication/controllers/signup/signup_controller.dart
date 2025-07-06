@@ -37,7 +37,6 @@ class SignupController extends GetxController {
         isLoading.value = false;
         return;
       }
-      ;
 
       // Form Validations
       if (!signupFormKey.currentState!.validate()) {
@@ -57,7 +56,7 @@ class SignupController extends GetxController {
 
       // Register user in the Firebase Authentication & Save user data in Cloud Firestore
       final userCredential = await AuthenticationRepository.instance
-          .registerUser(
+          .registerUserWithEmailAndPassword(
               email: email.text.trim(), password: password.text.trim());
 
       // Save authenticated user data in the Firebase Firestore

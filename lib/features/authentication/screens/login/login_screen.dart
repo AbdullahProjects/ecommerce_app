@@ -13,25 +13,28 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: AppSpacingStyles.paddingWithAppbarHeight,
-          child: Column(
-            children: [
-              /// Logo, Title, SubTitle
-              LoginHeader(),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: AppSpacingStyles.paddingWithAppbarHeight,
+            child: Column(
+              children: [
+                /// Logo, Title, SubTitle
+                LoginHeader(),
 
-              /// Form
-              LoginForm(),
+                /// Form
+                LoginForm(),
 
-              /// Divider
-              AuthenticationDivider(text: AppTexts.orSignInWith.capitalize!),
-              const SizedBox(height: AppSizes.spaceBtwSections),
+                /// Divider
+                AuthenticationDivider(text: AppTexts.orSignInWith.capitalize!),
+                const SizedBox(height: AppSizes.spaceBtwSections),
 
-              /// Footer
-              AuthenticationSocialButtons(),
-            ],
+                /// Footer
+                AuthenticationSocialButtons(),
+              ],
+            ),
           ),
         ),
       ),

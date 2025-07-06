@@ -47,9 +47,26 @@ class AuthenticationRepository extends GetxController {
   /// ---------------------- Email and Password sign-in ------------------------
 
   // Sign in User
+  Future<UserCredential> loginWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again later!';
+    }
+  }
 
   // Register User
-  Future<UserCredential> registerUser(
+  Future<UserCredential> registerUserWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
       print("Email: $email, Password: $password");

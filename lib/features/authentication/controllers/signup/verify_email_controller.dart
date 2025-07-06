@@ -41,7 +41,8 @@ class VerifyEmailController extends GetxController {
               title: AppTexts.yourAccountCreatedTitle,
               subTitle: AppTexts.yourAccountCreatedSubTitle,
               image: AppImages.staticSuccessIllustration,
-              onPressed: () => Get.offAll(() => const NavigationMenuScreen())),
+              onPressed: () =>
+                  AuthenticationRepository.instance.screenRedirect()),
         );
       }
     });
@@ -57,7 +58,8 @@ class VerifyEmailController extends GetxController {
             title: AppTexts.yourAccountCreatedTitle,
             subTitle: AppTexts.yourAccountCreatedSubTitle,
             image: AppImages.staticSuccessIllustration,
-            onPressed: () => Get.offAll(() => const NavigationMenuScreen())),
+            onPressed: () =>
+                AuthenticationRepository.instance.screenRedirect()),
       );
     } else {
       AppLoaders.warningSnackBar(
