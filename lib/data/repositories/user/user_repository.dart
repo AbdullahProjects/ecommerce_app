@@ -23,7 +23,7 @@ class UserRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw AppFirebaseException(e.code).message;
     } on FormatException catch (e) {
-      throw AppFormatException();
+      throw AppFormatException(e.message);
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code).message;
     } catch (e) {

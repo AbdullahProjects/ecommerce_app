@@ -5,6 +5,7 @@ import 'package:ecommerce_app/utils/constants/app_colors.dart';
 import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import 'package:ecommerce_app/utils/constants/app_texts.dart';
 import 'package:ecommerce_app/utils/device/device_utility.dart';
+import 'package:ecommerce_app/utils/loaders/circular_progress_indicator.dart';
 import 'package:ecommerce_app/utils/validators/form/form_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -122,11 +123,15 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: AppSizes.spaceBtwSections),
 
           /// Signup button
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () => controller.signup(),
-              child: const Text(AppTexts.createAccount),
+          Obx(
+            () => SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => controller.signup(),
+                child: controller.isLoading.value
+                    ? CustomCircularProgressIndicator()
+                    : const Text(AppTexts.createAccount),
+              ),
             ),
           ),
         ],

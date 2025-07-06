@@ -33,19 +33,22 @@ class AuthenticationRepository extends GetxController {
         : Get.offAll(() => const OnBoardingScreen());
   }
 
-  // ---------------------- Email and Password sign-in -------------------------
+  /// ---------------------- Email and Password sign-in ------------------------
+
+  // Sign in User
 
   // Register User
   Future<UserCredential> registerUser(
       {required String email, required String password}) async {
     try {
+      print("Email: $email, Password: $password");
       return await _auth.signInWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
       throw AppFirebaseException(e.code).message;
-    } on FormatException catch (e) {
+    } on FormatException catch (_) {
       throw AppFormatException();
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code).message;
@@ -53,4 +56,7 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong. Please try again later!';
     }
   }
+
+  /// ----------------------- Email Verification -------------------------------
+  ///
 }

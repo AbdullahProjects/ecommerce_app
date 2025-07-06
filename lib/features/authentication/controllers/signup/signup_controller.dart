@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
+  Rx<bool> isLoading = false.obs;
 
   /// Variables
   final hidePassword = true.obs;
@@ -27,16 +28,22 @@ class SignupController extends GetxController {
   Future<void> signup() async {
     try {
       // Start Loading
-      FullScreenLoader.openLoadingDialog(
-          'We are processing your information...',
-          AppImages.productsIllustration);
+      isLoading.value = true;
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) {
+        // Remove loader
+        isLoading.value = false;
+        return;
+      }
+      ;
 
       // Form Validations
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        isLoading.value = false;
+        return;
+      }
 
       // Privacy Policy Check
       if (!privacyPolicyChecked.value) {
@@ -44,6 +51,7 @@ class SignupController extends GetxController {
             title: "Accept Privacy Policy",
             message:
                 "In order to create your account, please accept our privacy policy and terms of services.");
+        isLoading.value = false;
         return;
       }
 
@@ -66,6 +74,9 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
+      // Stop Loading
+      isLoading.value = false;
+
       // Show Success Message
       AppLoaders.successSnackBar(
           title: "Congratulations!",
@@ -74,9 +85,9 @@ class SignupController extends GetxController {
       // Move to verify email screen
       Get.to(() => const VerifyEmailScreen());
     } catch (e) {
+      // Stop Loading
+      isLoading.value = false;
       AppLoaders.errorSnackBar(title: "Oh Snap!", message: e.toString());
-    } finally {
-      FullScreenLoader.stopLoading();
     }
   }
 }

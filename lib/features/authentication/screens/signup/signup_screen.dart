@@ -11,32 +11,35 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(AppSizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// Title
-              Text(
-                AppTexts.signupTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              const SizedBox(height: AppSizes.spaceBtwSections),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: AppBar(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(AppSizes.defaultSpace),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /// Title
+                Text(
+                  AppTexts.signupTitle,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: AppSizes.spaceBtwSections),
 
-              /// Form
-              SignupForm(),
-              const SizedBox(height: AppSizes.spaceBtwSections),
+                /// Form
+                SignupForm(),
+                const SizedBox(height: AppSizes.spaceBtwSections),
 
-              /// Divider
-              AuthenticationDivider(text: AppTexts.orSignUpWith.capitalize!),
-              const SizedBox(height: AppSizes.spaceBtwSections),
+                /// Divider
+                AuthenticationDivider(text: AppTexts.orSignUpWith.capitalize!),
+                const SizedBox(height: AppSizes.spaceBtwSections),
 
-              /// Footer
-              AuthenticationSocialButtons(),
-            ],
+                /// Footer
+                AuthenticationSocialButtons(),
+              ],
+            ),
           ),
         ),
       ),

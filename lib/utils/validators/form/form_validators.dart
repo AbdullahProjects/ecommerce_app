@@ -54,7 +54,7 @@ class FormValidator {
     }
 
     // Check for numbers
-    if (!value.contains(RegExp('r[0-9]'))) {
+    if (!value.contains(RegExp(r'[0-9]'))) {
       return "Password must contain at least one number.";
     }
 

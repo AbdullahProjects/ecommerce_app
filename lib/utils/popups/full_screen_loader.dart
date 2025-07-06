@@ -2,7 +2,6 @@ import 'package:ecommerce_app/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/utils/constants/app_colors.dart';
-import 'package:ecommerce_app/utils/constants/app_sizes.dart';
 import '../loaders/animation_loader.dart';
 
 /// A utility class for managing a full-screen loading dialog.
@@ -13,8 +12,8 @@ class FullScreenLoader {
   /// Parameters:
   ///   - text: The text to be displayed in the loading dialog.
   ///   - animation: The Lottie animation to be shown.
-  static void openLoadingDialog(String text, String animation) {
-    showDialog(
+  static void openLoadingDialog(String text, String animation) async {
+    await showDialog(
       context:
           Get.overlayContext!, // Use Get.overlayContext for overlay dialogs
       barrierDismissible:
@@ -28,8 +27,8 @@ class FullScreenLoader {
           width: double.infinity,
           height: double.infinity,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 250), // Adjust the spacing as needed
               AnimationLoaderWidget(text: text, animation: animation),
             ],
           ),
@@ -40,7 +39,7 @@ class FullScreenLoader {
 
   /// Stop the currently open loading dialog.
   /// This method doesn't return anything.
-  static stopLoading() {
+  static void stopLoading() {
     Navigator.of(Get.overlayContext!)
         .pop(); // Close the dialog using the Navigator
   }
