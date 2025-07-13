@@ -32,11 +32,11 @@ class GetStorageServices {
     deviceStorage.write(rememberMePassword, password);
   }
 
-  static String getRememberedEmail() {
+  static String? getRememberedEmail() {
     return deviceStorage.read(rememberMeEmail);
   }
 
-  static String getRememberedPassword() {
+  static String? getRememberedPassword() {
     return deviceStorage.read(rememberMePassword);
   }
 }

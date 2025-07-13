@@ -18,8 +18,8 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    email.text = GetStorageServices.getRememberedEmail();
-    password.text = GetStorageServices.getRememberedPassword();
+    email.text = GetStorageServices.getRememberedEmail() ?? "";
+    password.text = GetStorageServices.getRememberedPassword() ?? "";
     super.onInit();
   }
 

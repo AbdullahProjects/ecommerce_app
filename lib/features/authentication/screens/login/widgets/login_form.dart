@@ -91,13 +91,15 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwSections),
 
             /// Sign-in buttons
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => controller.loginWithEmailAndPassword(),
-                child: controller.isLoading.value
-                    ? CustomCircularProgressIndicator()
-                    : Text(AppTexts.signIn),
+            Obx(
+              () => SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => controller.loginWithEmailAndPassword(),
+                  child: controller.isLoading.value
+                      ? CustomCircularProgressIndicator()
+                      : Text(AppTexts.signIn),
+                ),
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwItems),
