@@ -12,12 +12,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
   /// Variables
   final _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   final deviceStorage = GetStorage();
 
   /// Called from main.dart on app launch
@@ -44,7 +46,7 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /// ---------------------- Email and Password sign-in ------------------------
+  /// ---------------------- Email and Password sign-in & sign-up ------------------------
 
   // Sign in User
   Future<UserCredential> loginWithEmailAndPassword(
@@ -89,6 +91,39 @@ class AuthenticationRepository extends GetxController {
   Future<void> sendEmailVerificationLink() async {
     try {
       await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again later!';
+    }
+  }
+
+  /// ------------------------- Social Authentication --------------------------
+  // Google Sign In
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      // Sign out user
+      // Trigger the authentication flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? auth =
+          await userAccount?.authentication;
+
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        idToken: auth?.idToken,
+        accessToken: auth?.accessToken,
+      );
+
+      // Once sign-in, returns the user credential
+      return await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

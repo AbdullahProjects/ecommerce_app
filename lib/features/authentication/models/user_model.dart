@@ -21,6 +21,9 @@ class UserModel {
   /// Helper function to get the full name
   String get fullName => "$firstName $lastName";
 
+  /// Static function to split full name into first and last name
+  static List<String> nameParts(String fullName) => fullName.split(" ");
+
   /// Helper function to create an empty user model
   static UserModel empty() => UserModel(
       id: '',
